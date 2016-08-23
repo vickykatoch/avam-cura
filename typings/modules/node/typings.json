@@ -1,0 +1,17 @@
+{
+
+  "name": "node",
+
+  "homepage": "https://nodejs.org/",
+
+  "version": "6",
+
+  "ambient": true,
+
+  "files": [
+
+    "node.d.ts"
+
+  ]
+
+}
