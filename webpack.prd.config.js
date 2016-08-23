@@ -1,12 +1,15 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin=require('extract-text-webpack-plugin');
+
+var GLOBALS = {
+  'process.env.NODE_ENV' : JSON.stringify('production')
+};
 
 module.exports = {
-    debug:true,
-  devtools: 'eval-source-map',
+  devtools: 'source-map',
   context : __dirname,
   entry: [
-    'webpack-hot-middleware/client',
     './src/index.js'
   ],
   output: {
@@ -15,9 +18,11 @@ module.exports = {
     filename : 'bundle.js'
   },
   plugins: [
-    new webpack.NoErrorsPlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.DefinePlugin(GLOBALS),
+    new ExtractTextPlugin('style.css'),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin()
   ],
   module: {
     loaders: [
