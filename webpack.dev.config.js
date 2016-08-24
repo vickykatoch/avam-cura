@@ -1,41 +1,40 @@
-var path = require('path');
-var webpack = require('webpack');
+import path from 'path';
+import webpack from 'webpack';
 
-module.exports = {
-    debug:true,
-  devtools: 'eval-source-map',
-  context : __dirname,
-  entry: [
-    'webpack-hot-middleware/client',
-    './src/index.js'
-  ],
-  output: {
-    path: path.join(__dirname,'./www/scripts'),
-    publicPath: '/',
-    filename : 'bundle.js'
+const GLOBALS = {
+      'process.env.NODE_ENV': JSON.stringify('development'),
+      __DEV__: true
+    };
+
+export default {
+  resolve: {
+    extensions: ['', '.js']
   },
-  plugins: [
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
+  debug: true,
+  devtools : 'eval-source-map',
+  context : path.resolve('src'),
+  entry : [ 
+    './webpack-public-path',
+    'webpack-hot-middleware/client?reload=true',
+    './index'
+  ],
+  target: 'web',
+  output : {
+    path: path.resolve('www/assets/'),
+		publicPath: '/www/assets/',
+		filename: "bundle.js"
+  },
+  plugins :[
+    new webpack.DefinePlugin(GLOBALS),
     new webpack.HotModuleReplacementPlugin()
   ],
-  module: {
-    loaders: [
-        {
-            test: /\.js$/,
-            include: [
-                path.join(__dirname, 'src')
-            ],
-            loaders: [ 'react-hot', 'babel' ]
-        },
-        { test: /\.css$/, loader: 'style-loader!css-loader' },
-        { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
-        { test: /\.(woff|woff2)$/, loader:"url?prefix=font/&limit=5000" },
-        { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
-        { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
+  module : {
+    loaders : [
+      {
+        test : /\.js$/,
+        exclude: /node_modules/,
+				loaders: ['babel']
+      }
     ]
-  },
-  resolve: {
-    extentions: [ '', '.js' ]
   }
-}
+};
