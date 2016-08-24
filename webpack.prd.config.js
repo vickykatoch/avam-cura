@@ -25,7 +25,13 @@ export default {
   plugins :[
     new webpack.DefinePlugin(GLOBALS),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+            children: true,
+            // (use all children of the chunk)
+            async: true,
+            // (create an async commons chunk)
+        })
   ],
   module : {
     loaders : [
