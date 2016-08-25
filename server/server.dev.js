@@ -11,7 +11,7 @@ const compiler = webpack(config);
 app.use(webpackMiddleware(compiler,{
     hot: true,
     publicPath : config.output.publicPath,
-    noInfo :true,
+    noInfo :false
 }));
 app.use(webpackHotMiddleware(compiler));
 

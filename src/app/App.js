@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import LineChart from './LineChartAsync';
 
 class App extends Component {
 
@@ -18,7 +19,7 @@ class App extends Component {
         return (
             <div>
 
-                <h1>Hello React 323</h1>
+                <h1>Hello React</h1>
 
                 Show charts:
                 <input type="checkbox" value={this.state.showCharts} onChange={this.handleChange} />

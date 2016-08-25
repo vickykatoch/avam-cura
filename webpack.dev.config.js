@@ -10,6 +10,11 @@ export default {
   resolve: {
     extensions: ['', '.js']
   },
+  stats: {
+        colors: true
+  },
+  progress : true,
+  headers: { "X-Custom-Header": "yes" },
   debug: true,
   devtools : 'eval-source-map',
   context : path.resolve('src'),
@@ -26,7 +31,13 @@ export default {
   },
   plugins :[
     new webpack.DefinePlugin(GLOBALS),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+            children: true,
+            // (use all children of the chunk)
+            async: true,
+            // (create an async commons chunk)
+        })
   ],
   module : {
     loaders : [
@@ -34,7 +45,17 @@ export default {
         test : /\.js$/,
         exclude: /node_modules/,
 				loaders: ['babel']
-      }
+      },
+      {
+				test: /\.css$/,
+				exclude: /node_modules/,
+				loader: "style-loader!css-loader"
+			},
+			{
+				test: /\.scss$/,
+				exclude: /node_modules/,
+				loader: "style-loader!css-loader!sass-loader"
+			}
     ]
   }
 };

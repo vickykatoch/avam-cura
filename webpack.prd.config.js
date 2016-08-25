@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
@@ -11,8 +12,8 @@ export default {
   resolve: {
     extensions: ['', '.js']
   },
-  debug: true,
-  noInfo : true,
+  debug: false,
+  noInfo : false,
   devtools : 'source-map',
   context : path.resolve('src'),
   entry : ['./index'],
@@ -31,7 +32,8 @@ export default {
             // (use all children of the chunk)
             async: true,
             // (create an async commons chunk)
-        })
+        }),
+    new ExtractTextPlugin("styles.css")
   ],
   module : {
     loaders : [
@@ -39,7 +41,17 @@ export default {
         test : /\.js$/,
         exclude: /node_modules/,
 				loaders: ['babel']
-      }
+      },
+      {
+				test: /\.css$/,
+				exclude: /node_modules/,
+				loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+			},
+			{
+				test: /\.scss$/,
+				exclude: /node_modules/,
+				loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+			}
     ]
   }
 };
