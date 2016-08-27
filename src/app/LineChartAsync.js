@@ -3,15 +3,18 @@ import AsyncComponent from '../common/utils/AsyncComponent';
 import CompLoadScheduler from '../common/utils/AsyncCompLoader';
 
 const compLoader = (callback)=>{
-    debugger;
     require.ensure([], (require)=>{
-        callback(require('./LineChart'));
+        let comp = require('./LineChart');
+        callback(comp);
     });
 }
+const renderPlaceholder = () =>
+    <div style={{textAlign: 'center'}}>
+        <CircularProgress/>
+    </div>
 
 CompLoadScheduler(compLoader);
 
-export default (props)=>{
+export default (props)=>
     <AsyncComponent {...props} componentLoader={compLoader}/>
-}
 

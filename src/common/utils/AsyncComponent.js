@@ -10,8 +10,8 @@ class AsyncComponent extends Component {
     }
 
     componentDidMount() {
-        this.props.loader((componentModule)=>{
-            this.setState({component : componentModule});
+        this.props.componentLoader((componentModule)=>{
+            this.setState({component : componentModule.default});
         });
     }
     renderPlaceholder() {

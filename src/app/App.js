@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import LineChart from './LineChartAsync';
+import AppBar from '../common/appbar/AppBar';
+import ProgressBar from '../common/progressbar/ProgressBar';
+
 
 class App extends Component {
 
@@ -18,7 +21,10 @@ class App extends Component {
     render() {
         return (
             <div>
-
+                <AppBar {...this.props}>
+                    React Application Bar
+                </AppBar>
+                <ProgressBar />
                 <h1>Hello React</h1>
 
                 Show charts:
