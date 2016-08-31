@@ -31,7 +31,6 @@ class App extends Component {
 
                 Show charts:
                 <input type="checkbox" value={this.state.showCharts} onChange={this.handleChange} />
-
                 {
                     this.state.showCharts ? <div><LineChart/></div> : null
                 }

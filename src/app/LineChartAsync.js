@@ -1,6 +1,7 @@
 import React from 'react';
 import AsyncComponent from '../common/utils/AsyncComponent';
 import CompLoadScheduler from '../common/utils/AsyncCompLoader';
+import {ProgressBar} from '../common/components/progressbar/index';
 
 const compLoader = (callback)=>{
     require.ensure([], (require)=>{
@@ -9,12 +10,10 @@ const compLoader = (callback)=>{
     });
 }
 const renderPlaceholder = () =>
-    <div style={{textAlign: 'center'}}>
-        <CircularProgress/>
-    </div>
+    <ProgressBar type='circular' mode='indeterminate' multicolor/>
 
 CompLoadScheduler(compLoader);
 
 export default (props)=>
-    <AsyncComponent {...props} componentLoader={compLoader}/>
+    <AsyncComponent {...props} componentLoader={compLoader} renderPlaceHolder={renderPlaceholder}/>
 
