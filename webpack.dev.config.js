@@ -2,8 +2,6 @@ import path from 'path';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';
-// var path = require('path'),
-//     webpack = require('webpack');
 
 const GLOBALS = {
       'process.env.NODE_ENV': JSON.stringify('development'),
@@ -36,8 +34,13 @@ export default {
   plugins :[
     new webpack.DefinePlugin(GLOBALS),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new ExtractTextPlugin("styles.css")
   ],
+  sassLoader : {
+    data: '@import "styles/_config.scss";',
+    includePaths: [path.resolve(__dirname, './src')]
+  },
   postcss: [autoprefixer],
   module : {
     loaders : [
@@ -47,14 +50,10 @@ export default {
 				loaders: ['babel']
       },
       {
-				test: /\.css$/,
-				loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-			},
-			{
-				test: /\.scss$/,				
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
-        
-			}
+				test: /(\.scss|\.css)$/,
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass')
+      }
+			
     ]
   }
 };

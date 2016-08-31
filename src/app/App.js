@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import LineChart from './LineChartAsync';
-import AppBar from '../common/appbar/AppBar';
-import ProgressBar from '../common/progressbar/ProgressBar';
+import AppBar from '../common/components/appbar/index';
+
 
 
 class App extends Component {
@@ -19,12 +19,15 @@ class App extends Component {
     }
 
     render() {
+        let progStyle={
+            height: '100px',
+            width : '100px'
+        }
         return (
             <div>
                 <AppBar {...this.props}>
                     React Application Bar
                 </AppBar>
-                <ProgressBar />
                 <h1>Hello React</h1>
 
                 Show charts:
