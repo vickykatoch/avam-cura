@@ -8,7 +8,6 @@ const AppBar = ({ theme, ...props }) => {
     [theme.fixed]: props.fixed,
     [theme.flat]: props.flat
   }, props.className);
-  debugger;
   return (
     <header className={className} data-react-toolbox='app-bar'>
       {props.children}
