@@ -45,6 +45,7 @@
     "colors": "^1.1.2",
     "css-loader": "^0.24.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "immutability-helper": "^2.0.0",
     "konva": "^1.1.0",
     "node-sass": "^3.8.0",
     "nodemon": "^1.10.2",
