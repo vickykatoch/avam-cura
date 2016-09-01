@@ -6,3 +6,6 @@ export const BUTTON                     =       'AVButton';
 export const RIPPLE                     =       'AVRipple';
 export const CHECKBOX                   =       'AVCheckBox';
 export const INPUT                      =       'AVInput';
+export const DATE_PICKER                =       'AVDatePicker';
+export const DIALOG                     =       'AVDialog';
+
