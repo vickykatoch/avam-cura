@@ -5,3 +5,4 @@ export const OVERLAY                    =       'AVOverlay';
 export const BUTTON                     =       'AVButton';
 export const RIPPLE                     =       'AVRipple';
 export const CHECKBOX                   =       'AVCheckBox';
+export const INPUT                      =       'AVInput';
