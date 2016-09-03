@@ -8,4 +8,6 @@ export const CHECKBOX                   =       'AVCheckBox';
 export const INPUT                      =       'AVInput';
 export const DATE_PICKER                =       'AVDatePicker';
 export const DIALOG                     =       'AVDialog';
+export const CHIP                       =       'AVChip';
+export const AUTOCOMPLETE               =       'AVAutocomplete';
 
