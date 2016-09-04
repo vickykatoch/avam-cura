@@ -13,6 +13,8 @@ import DropdownDemo from './DropdownDemo';
 import RadioButtonDemo from './RadioButtonDemo';
 import SwitchDemo from './SwitchDemo';
 import TabsDemo from './TabsDemo';
+import MenuDemo from './MenuDemo';
+
 
 const datetime = new Date(2015, 10, 16);
 const min_datetime = new Date(new Date(datetime).setDate(8));
@@ -96,8 +98,11 @@ class Demo extends Component {
         return (
             <div>
                 <AppBar {...this.props}>
-                    Application Bar Sample
+
+                    <MenuDemo/>
+
                 </AppBar>
+                
                 <div className="demo-header">
 
                     <Autocomplete
