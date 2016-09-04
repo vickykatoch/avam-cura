@@ -20,6 +20,7 @@ import LayoutDemo from './LayoutDemo';
 import ListDemo from './ListDemo';
 import NavigationDemo from './NavigationDemo';
 import SliderDemo from './SliderDemo';
+import SnackbarDemo from './SnackbarDemo';
 
 const datetime = new Date(2015, 10, 16);
 const min_datetime = new Date(new Date(datetime).setDate(8));
@@ -116,7 +117,9 @@ class Demo extends Component {
 
                 </AppBar>
                 <LinksTest/>
-<SliderDemo/>
+                <SliderDemo/>
+
+                <SnackbarDemo/>
                 <LayoutDemo/>
                 <ListDemo/>
                 <div className="demo-header">
