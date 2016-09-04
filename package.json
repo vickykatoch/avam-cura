@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/vickykatoch/avam-cura#readme",
   "dependencies": {
+    "avam-material": "git+https://github.com/vickykatoch/avam-material.git",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "react": "^15.3.1",
