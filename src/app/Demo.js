@@ -12,6 +12,7 @@ import {Dialog} from '../common/components/dialog/index';
 import DropdownDemo from './DropdownDemo';
 import RadioButtonDemo from './RadioButtonDemo';
 import SwitchDemo from './SwitchDemo';
+import TabsDemo from './TabsDemo';
 
 const datetime = new Date(2015, 10, 16);
 const min_datetime = new Date(new Date(datetime).setDate(8));
@@ -133,6 +134,8 @@ class Demo extends Component {
                 <SwitchDemo />
                 <DropdownDemo />
                 <RadioButtonDemo/>
+
+                <TabsDemo />
                 <div style={gutter}>
 
                     <Dialog

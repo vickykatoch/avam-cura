@@ -13,4 +13,5 @@ export const AUTOCOMPLETE               =       'AVAutocomplete';
 export const DROPDOWN                   =       'AVDropdown';
 export const RADIO                      =       'AVRadio';
 export const SWITCH                     =       'AVSwitch';
+export const TABS                       =       'AVTabs';
 
