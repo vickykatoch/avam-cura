@@ -18,6 +18,7 @@ import MenuDemo from './MenuDemo';
 import CardDemo from './CardDemo';
 import LayoutDemo from './LayoutDemo';
 import ListDemo from './ListDemo';
+import NavigationDemo from './NavigationDemo';
 
 const datetime = new Date(2015, 10, 16);
 const min_datetime = new Date(new Date(datetime).setDate(8));
@@ -155,6 +156,7 @@ class Demo extends Component {
                 <RadioButtonDemo/>
                 <CardDemo/>
                 <TabsDemo />
+                <NavigationDemo/>
                 <div style={gutter}>
 
                     <Dialog
