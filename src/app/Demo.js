@@ -11,7 +11,7 @@ import {Autocomplete} from '../common/components/autocomplete/index';
 import {Dialog} from '../common/components/dialog/index';
 import DropdownDemo from './DropdownDemo';
 import RadioButtonDemo from './RadioButtonDemo';
-
+import SwitchDemo from './SwitchDemo';
 
 const datetime = new Date(2015, 10, 16);
 const min_datetime = new Date(new Date(datetime).setDate(8));
@@ -130,7 +130,7 @@ class Demo extends Component {
                         <p>You can embed any content you want, for example a Menu.</p>
                     </Drawer>
                 </div>
-
+                <SwitchDemo />
                 <DropdownDemo />
                 <RadioButtonDemo/>
                 <div style={gutter}>

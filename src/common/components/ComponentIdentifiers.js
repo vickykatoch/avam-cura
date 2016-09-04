@@ -12,4 +12,5 @@ export const CHIP                       =       'AVChip';
 export const AUTOCOMPLETE               =       'AVAutocomplete';
 export const DROPDOWN                   =       'AVDropdown';
 export const RADIO                      =       'AVRadio';
+export const SWITCH                     =       'AVSwitch';
 
