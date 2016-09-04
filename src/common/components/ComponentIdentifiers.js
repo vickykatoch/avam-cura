@@ -21,8 +21,7 @@ export const LINK                       =       'AVLink';
 export const LIST                       =       'AVList';
 export const NAVIGATION                 =       'AVNavigation';
 export const SLIDER                     =       'AVSlider';
-
-export const SNACKBAR                   =       'AVSnackBar';
+export const SNACKBAR                   =       'AVSnackbar';
 export const TABLE                      =       'AVTable';
 export const TOOLTIP                    =       'AVToolTip';
 export const TIME_PICKER                =       'AVTimePicker';

@@ -21,6 +21,9 @@ import ListDemo from './ListDemo';
 import NavigationDemo from './NavigationDemo';
 import SliderDemo from './SliderDemo';
 import SnackbarDemo from './SnackbarDemo';
+import TableDemo from './TableDemo';
+import TooltipDemo from './TooltipDemo';
+import TimePickerDemo from './TimePickerDemo';
 
 const datetime = new Date(2015, 10, 16);
 const min_datetime = new Date(new Date(datetime).setDate(8));
@@ -114,11 +117,12 @@ class Demo extends Component {
                 <AppBar {...this.props}>
 
                     <MenuDemo/>
-
+                    <TimePickerDemo/>
                 </AppBar>
+                <TooltipDemo/>
                 <LinksTest/>
                 <SliderDemo/>
-
+                <TableDemo/>
                 <SnackbarDemo/>
                 <LayoutDemo/>
                 <ListDemo/>
