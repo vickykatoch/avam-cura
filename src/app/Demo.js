@@ -8,6 +8,10 @@ import {Checkbox} from '../common/components/checkbox/index';
 import {Input} from '../common/components/input/index';
 import {DatePicker} from '../common/components/datepicker/index';
 import {Autocomplete} from '../common/components/autocomplete/index';
+import {Dialog} from '../common/components/dialog/index';
+import DropdownDemo from './DropdownDemo';
+import RadioButtonDemo from './RadioButtonDemo';
+
 
 const datetime = new Date(2015, 10, 16);
 const min_datetime = new Date(new Date(datetime).setDate(8));
@@ -36,13 +40,19 @@ class Demo extends Component {
             check1: false,
             check2: false,
             singleCountry: 'spain',
-            countries: ['ES-es', 'TH-th']
+            countries: ['ES-es', 'TH-th'],
+            showDialog: false,
+            actions: [
+                { label: "Cancel", onClick: this.toggleDialog },
+                { label: "Save", onClick: this.toggleDialog }
+            ]
         };
         this.handleChange = this.handleChange.bind(this);
         this.toggleDrawer = this.toggleDrawer.bind(this);
         this.handleCheckChange = this.handleCheckChange.bind(this);
         this.handleCountryChange = this.handleCountryChange.bind(this);
         this.handleCountriesChange = this.handleCountriesChange.bind(this);
+        this.toggleDialog = this.toggleDialog.bind(this);
     }
 
     handleChange() {
@@ -67,7 +77,11 @@ class Demo extends Component {
             showDrawer: !this.state.showDrawer
         });
     }
-
+    toggleDialog() {
+        this.setState({
+            showDialog: !this.state.showDialog
+        });
+    }
     render() {
         let gutter = {
             marginTop: '20px'
@@ -117,10 +131,25 @@ class Demo extends Component {
                     </Drawer>
                 </div>
 
+                <DropdownDemo />
+                <RadioButtonDemo/>
                 <div style={gutter}>
+
+                    <Dialog
+                        actions={this.state.actions}
+                        active={this.state.showDialog}
+                        onEscKeyDown={this.toggleDialog}
+                        onOverlayClick={this.toggleDialog}
+                        title='Dialog'
+                        >
+                        <p>Here you can add arbitrary content.Components like Pickers are using dialogs now.</p>
+                    </Dialog>
+                    <Button label='Show Dialog' onClick={this.toggleDialog} /><br />
+
                     <Button href='http://github.com/javivelasco' target='_blank' raised>
                         <GithubIcon /> Github
                     </Button>
+
                     <Button icon='bookmark' label='Bookmark' accent /><br />
                     <Button icon='bookmark' label='Bookmark' raised primary /><br />
                     <Button icon='inbox' label='Inbox' flat /><br />

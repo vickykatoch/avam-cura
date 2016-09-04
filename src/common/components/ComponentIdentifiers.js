@@ -10,4 +10,6 @@ export const DATE_PICKER                =       'AVDatePicker';
 export const DIALOG                     =       'AVDialog';
 export const CHIP                       =       'AVChip';
 export const AUTOCOMPLETE               =       'AVAutocomplete';
+export const DROPDOWN                   =       'AVDropdown';
+export const RADIO                      =       'AVRadio';
 
