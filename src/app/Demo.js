@@ -14,7 +14,7 @@ import RadioButtonDemo from './RadioButtonDemo';
 import SwitchDemo from './SwitchDemo';
 import TabsDemo from './TabsDemo';
 import MenuDemo from './MenuDemo';
-
+import CardDemo from './CardDemo';
 
 const datetime = new Date(2015, 10, 16);
 const min_datetime = new Date(new Date(datetime).setDate(8));
@@ -139,7 +139,7 @@ class Demo extends Component {
                 <SwitchDemo />
                 <DropdownDemo />
                 <RadioButtonDemo/>
-
+                <CardDemo/>
                 <TabsDemo />
                 <div style={gutter}>
 
