@@ -19,9 +19,9 @@ export const CARD                       =       'AVCard';
 export const LAYOUT                     =       'AVLayout';
 export const LINK                       =       'AVLink';
 export const LIST                       =       'AVList';
-
-export const NAVIGATION                 =       'AVList';
+export const NAVIGATION                 =       'AVNavigation';
 export const SLIDER                     =       'AVSlider';
+
 export const SNACKBAR                   =       'AVSnackBar';
 export const TABLE                      =       'AVTable';
 export const TOOLTIP                    =       'AVToolTip';
