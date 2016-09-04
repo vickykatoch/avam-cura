@@ -17,3 +17,4 @@ export const TABS                       =       'AVTabs';
 export const MENU                       =       'AVMenu';
 export const CARD                       =       'AVCard';
 export const LAYOUT                     =       'AVLayout';
+export const LINK                       =       'AVLink';

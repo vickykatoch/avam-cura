@@ -9,6 +9,7 @@ import {Input} from '../common/components/input/index';
 import {DatePicker} from '../common/components/datepicker/index';
 import {Autocomplete} from '../common/components/autocomplete/index';
 import {Dialog} from '../common/components/dialog/index';
+import {Link} from '../common/components/link/index';
 import DropdownDemo from './DropdownDemo';
 import RadioButtonDemo from './RadioButtonDemo';
 import SwitchDemo from './SwitchDemo';
@@ -22,6 +23,14 @@ const min_datetime = new Date(new Date(datetime).setDate(8));
 const max_datetime = new Date(new Date(datetime).setDate(24));
 datetime.setHours(17);
 datetime.setMinutes(28);
+
+const LinksTest = () => (
+  <nav>
+    <Link active href="/#/components/link" label="Work" count={4} icon='business' />
+    <Link href="/#/components/link" label="Blog" icon='speaker_notes' />
+    <Link href="/#/components/link" label="Explore" icon='explore' />
+  </nav>
+);
 
 const localeExample = {
     months: 'urtarrila_otsaila_martxoa_apirila_maiatza_ekaina_uztaila_abuztua_iraila_urria_azaroa_abendua'.split('_'),
@@ -103,6 +112,8 @@ class Demo extends Component {
                     <MenuDemo/>
 
                 </AppBar>
+                <LinksTest/>
+                
                 <LayoutDemo/>
 
                 <div className="demo-header">
