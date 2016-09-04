@@ -17,6 +17,7 @@ import TabsDemo from './TabsDemo';
 import MenuDemo from './MenuDemo';
 import CardDemo from './CardDemo';
 import LayoutDemo from './LayoutDemo';
+import ListDemo from './ListDemo';
 
 const datetime = new Date(2015, 10, 16);
 const min_datetime = new Date(new Date(datetime).setDate(8));
@@ -25,11 +26,11 @@ datetime.setHours(17);
 datetime.setMinutes(28);
 
 const LinksTest = () => (
-  <nav>
-    <Link active href="/#/components/link" label="Work" count={4} icon='business' />
-    <Link href="/#/components/link" label="Blog" icon='speaker_notes' />
-    <Link href="/#/components/link" label="Explore" icon='explore' />
-  </nav>
+    <nav>
+        <Link active href="/#/components/link" label="Work" count={4} icon='business' />
+        <Link href="/#/components/link" label="Blog" icon='speaker_notes' />
+        <Link href="/#/components/link" label="Explore" icon='explore' />
+    </nav>
 );
 
 const localeExample = {
@@ -113,9 +114,9 @@ class Demo extends Component {
 
                 </AppBar>
                 <LinksTest/>
-                
-                <LayoutDemo/>
 
+                <LayoutDemo/>
+                <ListDemo/>
                 <div className="demo-header">
 
                     <Autocomplete
