@@ -5,6 +5,7 @@ class Application extends Component {
         return (
             <div>
                 <h1>React UI</h1>
+                
             </div>
         );
     }
