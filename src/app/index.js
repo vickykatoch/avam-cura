@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
+import Layout from './layouts/index';
 
 class Application extends Component {
     render() {
         return (
-            <div>
+            <Layout>
                 <h1>React UI</h1>
-                
-            </div>
+            </Layout>
         );
     }
 }
