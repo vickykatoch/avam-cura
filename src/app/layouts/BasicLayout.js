@@ -18,12 +18,10 @@ class BasicLayout extends Component {
     }
 
     render() {
-        //debugger;
-        let leftBarButton;
-        if(!this.state.leftBarVisible)
-            leftBarButton= <IconButton icon='menu' inverse={ true } onClick={ this.toggleLeftBar }/> 
-        else
-            leftBarButton = <IconButton icon='close' inverse={ true } onClick={ this.toggleLeftBar } />;
+        let leftBarButton = (!this.state.leftBarVisible) ? 
+            <IconButton icon='menu' inverse={ true } onClick={ this.toggleLeftBar }/> : 
+            <IconButton icon='close' inverse={ true } onClick={ this.toggleLeftBar } />;
+        const theme = this.context.theme;
         return (
             
             <Layout>
@@ -34,9 +32,10 @@ class BasicLayout extends Component {
                 <Panel>
                     <AppBar flat fixed>
                          {leftBarButton}               
-                        
+                        <img className={theme.logo} />
                     </AppBar>
-                    <div style={{ flex: 1, overflowY: 'auto', padding: '1.8rem', marginTop:'40px' }}>
+                    
+                    <div style={{ flex: 1, overflowY: 'auto', padding: '1.8rem', marginTop:'40px', minHeight : '600px' }}>
                         <h1>Main Content</h1>
                         <p>Main content goes here.</p>                        
                     </div>
