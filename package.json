@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/vickykatoch/avam-cura#readme",
   "dependencies": {
-    "avam-material": "0.0.3",
+    "avam-material": "0.0.4",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
