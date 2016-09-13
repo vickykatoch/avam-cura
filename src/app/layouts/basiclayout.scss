@@ -1,0 +1,60 @@
+@import '~avam-material/lib/globals';
+@import '~avam-material/lib/appbar/config';
+@import './config';
+
+.flex{
+    display : flex;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    width:100%;
+}
+.titleArea {
+    order : 0;
+    flex : 1 1 auto;
+    align-self: auto;
+    @media screen and (max-width: $layout-breakpoint-xxs) and (orientation: portrait) {
+        font-size : 1em;
+    }
+    @media screen and (max-width: $layout-breakpoint-xs) and (orientation: landscape) {
+        font-size : 1.2em;
+    }
+}
+.logoArea {
+    order : 0;
+    flex : 0 0 150px;
+    align-self: center;
+}
+.logo{
+    margin-right: -25px;
+    height : $appbar-height;
+    width: 200px;
+    @media screen and (max-width: $layout-breakpoint-xxs) and (orientation: portrait) {
+        height: $appbar-height-m-portrait;
+        width: 100px;
+    }
+
+    @media screen and (max-width: $layout-breakpoint-xs) and (orientation: landscape) {
+        height: $appbar-height-m-landscape;
+        width: 125px;
+    }
+    
+}
+.userInfo {
+    padding: 15px 5px 5px 5px;
+    width:'100%';
+    background : $palette-blue-900;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    color : $color-primary-contrast;
+}
+.gravatar {
+    height: 70px;
+    width: 70px;
+    
+}
