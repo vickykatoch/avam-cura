@@ -44,7 +44,7 @@
     
 }
 .userInfo {
-    padding: 15px 5px 5px 5px;
+    padding-top: 15px;
     width:'100%';
     background : $palette-blue-900;
     display:flex;
@@ -60,6 +60,7 @@
 .navbarContent{
     margin-top: $appbar-height;
     height : 100vh;
+    width:100%;
     @media screen and (max-width: $layout-breakpoint-xxs) and (orientation: portrait) {
         margin-top: $appbar-height-m-portrait;
     }

@@ -26,8 +26,8 @@ export default {
     filename: "avam-cura.js"
   },
   plugins: [
-    new webpack.DefinePlugin(GLOBALS),
     new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.DefinePlugin(GLOBALS),
     new webpack.optimize.CommonsChunkPlugin({
       children: true,
       // (use all children of the chunk)
@@ -47,14 +47,7 @@ export default {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ['babel'],
-        query :{
-          presets: ['es2015', 'react', 'stage-0'],
-          plugins: [
-                      "transform-react-constant-elements",
-                      "transform-react-remove-prop-types"
-                    ]
-        }
+        loaders: ['babel']
       },
       {
         test: /(\.scss|\.css)$/,
