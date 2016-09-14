@@ -5,7 +5,8 @@ import autoprefixer from 'autoprefixer';
 
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('development'),
-  __DEV__: true
+  __DEV__: true,
+  'BABEL_ENV': JSON.stringify('dev')
 };
 //module.exports = {
 export default {
@@ -63,6 +64,3 @@ export default {
     ]
   }
 };
-
-//loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
-//loader: ExtractTextPlugin.extract('style', 'css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass')

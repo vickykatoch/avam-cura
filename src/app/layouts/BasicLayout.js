@@ -32,7 +32,7 @@ class BasicLayout extends Component {
                 </NavigationBar>
                 <Panel>
                     <Header isSideMenuVisible={this.state.leftBarVisible} toggleLeftBar ={ this.toggleLeftBar }/>
-                    <div style={{ flex: 1, overflowY: 'auto', padding: '1.8rem', marginTop:'40px', height : "calc(100vh - 65px)" }}>
+                    <div style={{ flex: 1, overflowY: 'auto', padding: '1.8rem', marginTop:'40px', height : "calc(100vh - 40px)" }}>
                         <h1>Main Content</h1>
                         <p>Main content goes here.</p>                        
                     </div>

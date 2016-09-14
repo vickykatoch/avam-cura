@@ -20,7 +20,7 @@
         font-size : 1em;
     }
     @media screen and (max-width: $layout-breakpoint-xs) and (orientation: landscape) {
-        font-size : 1.2em;
+        font-size : 1em;
     }
 }
 .logoArea {
@@ -56,5 +56,11 @@
 .gravatar {
     height: 70px;
     width: 70px;
-    
+}
+.navbarContent{
+    margin-top: $appbar-height;
+    height : 100vh;
+    @media screen and (max-width: $layout-breakpoint-xxs) and (orientation: portrait) {
+        margin-top: $appbar-height-m-portrait;
+    }
 }

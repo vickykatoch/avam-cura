@@ -22,3 +22,6 @@ SOFTWARE.
 "scripts": {
     "start": "nodemon --watch server --exec babel-node --debug -- server/index.js"
   }
+
+
+  

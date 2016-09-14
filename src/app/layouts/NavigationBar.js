@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import { NavDrawer, Panel } from 'avam-material/lib/layout/index';
 import UserInfo from './UserInfo';
+import styles from './basiclayout.scss';
 
 class NavigationBar extends Component {
     render() {
@@ -10,7 +11,7 @@ class NavigationBar extends Component {
             <NavDrawer
                 active={isVisible}
                 onOverlayClick={overlayClick}>
-                <div style={{ marginTop: '60px' }}>
+                <div className={styles.navbarContent}>
                     <UserInfo />
                 </div>
             </NavDrawer>

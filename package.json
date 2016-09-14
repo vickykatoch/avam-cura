@@ -9,7 +9,8 @@
     "start-prd": "babel-node server/server.prd.js",
     "build-dev": "babel-node tools/buildDev.js",
     "build-prd": "npm run remove && babel-node tools/buildProd.js && npm run start-prd",
-    "remove": "rimraf ./www/assets"
+    "remove": "rimraf ./www/assets",
+    "build" : "webpack -p --config webpack.prd.config.js"
   },
   "repository": {
     "type": "git",
@@ -38,8 +39,12 @@
     "autoprefixer": "^6.4.0",
     "babel-cli": "^6.14.0",
     "babel-loader": "^6.2.5",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-plugin-transform-react-constant-elements": "^6.9.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.2.9",
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
+    "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
     "body-parser": "^1.15.2",
     "css-loader": "^0.24.0",
@@ -49,6 +54,7 @@
     "node-sass": "^3.8.0",
     "postcss-loader": "^0.11.1",
     "react-hot-loader": "^1.3.0",
+    "react-transform-hmr": "^1.0.4",
     "rimraf": "^2.5.4",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",

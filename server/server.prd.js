@@ -1,6 +1,8 @@
 import path from 'path';
 import express from 'express';
 
+process.env.NODE_ENV = 'production';
+process.env.BABEL_ENV = 'production';
 
 let app = express();
 let staticPath = path.join(__dirname,'../www/assets');

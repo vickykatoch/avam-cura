@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import config from '../webpack.prd.config';
 
 process.env.NODE_ENV = 'production'; // this assures React is built in prod mode and that the Babel dev config doesn't apply.
+process.env.BABEL_ENV = 'production';
 
 console.log('Generating minified bundle for production via Webpack. This will take a moment...');
 
